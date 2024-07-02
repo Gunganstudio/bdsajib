@@ -1,50 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    	<meta content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1" name="viewport">
-		<meta property="og:title" content="Denver Player">
-    <meta property="og:description" content="User Can Play Any Type of Links for Example -: MP4, MKV, hls, M3U8 or Play MPD & ClearKey.">
-    <meta property="og:image" content="https://i.postimg.cc/FzZxT1Dp/image.jpg">
-    <meta property="og:url" content="https://denver1769.in">
-    <meta property="og:type" content="website">
-    <title>Jw Player</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://i.postimg.cc/YC3Npf10/image.webp">
-    <link rel="stylesheet" href="Mpd2.css">
-</head>
-<body>
-    <h1>Jw Player</h1>
+    <title>ENJOY FREE LIVE IPTV M3U8</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="ENJOY FREE LIVE IPTV M3U8">
+    <meta name="keywords" content="Watch live sports streaming online, including football, basketball, baseball, 
+    hockey, and more. Stream your favorite sports teams and events in HD, with no cable subscription required.">
+    <meta name="author" content="RUBEL BHAI">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.postimg.cc/4dYYpPDf/IMG-20240702-123636-143.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.6.2/dist/plyr.css" />
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.1.4/dist/hls.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <style>
+        html {
+            font-family: Poppins;
+            background: #000 ;
+            margin: 0;
+            padding: 0;
+        }
 
-    <label for="mediaLink">Media Link:</label>
-    <input type="text" id="mediaLink" placeholder="Enter M3u8/MPD Link">
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9999;
+        }
 
-    <label for="clearKeyId">KeyId:</label>
-    <input type="text" id="clearKeyId" placeholder="Enter Keyid">
+        .loading-text {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+        }
 
-    <label for="clearKey">Key:</label>
-    <input type="text" id="clearKey" placeholder="Enter Key">
+        .loading-text span {
+            display: inline-block;
+            margin: 0 5px;
+            color: #fff;
+            font-family: 'Quattrocento Sans', sans-serif;
+        }
 
-    <button onclick="playMedia()">Play</button>
-      
-    <script>
-    	// dont change codes Made by your Daddy -: Denver1769 //
-    function playMedia() {
-            const mediaLink = document.getElementById('mediaLink').value;
-            const clearKey = document.getElementById('clearKey').value;
-            const clearKeyId = document.getElementById('clearKeyId').value;
+        .loading-text span:nth-child(1) {
+            filter: blur(0px);
+            animation: blur-text 1.5s 0s infinite linear alternate;
+        }
 
-            let redirectLink = 'Player.html?';
-    // Player.html path select here //
-            if (mediaLink.includes('.mpd')) {
-                redirectLink += `mpd=${mediaLink}&keyId=${clearKeyId}&key=${clearKey}`;
-            } else if (mediaLink.includes('.m3u8')) {
-                redirectLink += `m3u8=${mediaLink}`;
+        .loading-text span:nth-child(2) {
+            filter: blur(0px);
+            animation: blur-text 1.5s 0.2s infinite linear alternate;
+        }
+
+        .loading-text span:nth-child(3) {
+            filter: blur(0px);
+            animation: blur-text 1.5s 0.4s infinite linear alternate;
+        }
+
+        .loading-text span:nth-child(4) {
+            filter: blur(0px);
+            animation: blur-text 1.5s 0.6s infinite linear alternate;
+        }
+
+        .loading-text span:nth-child(5) {
+            filter: blur(0px);
+            animation: blur-text 1.5s 0.8s infinite linear alternate;
+        }
+
+        .loading-text span:nth-child(6) {
+            filter: blur(0px);
+            animation: blur-text 1.5s 1s infinite linear alternate;
+        }
+
+        .loading-text span:nth-child(7) {
+            filter: blur(0px);
+            animation: blur-text 1.5s 1.2s infinite linear alternate;
+        }
+
+        .loading-text span:nth-child(8) {
+            filter: blur(0px);
+            animation: blur-text 1.5s 1.4s infinite linear alternate;
+        }
+        
+        .loading-text span:nth-child(9) {
+            filter: blur(0px);
+            animation: blur-text 1.5s 1.6s infinite linear alternate;
+        }
+        @keyframes blur-text {
+            0% {
+                filter: blur(0px);
             }
 
-            window.location.href = redirectLink;
+            100% {
+                filter: blur(4px);
+            }
         }
-        // dont change codes Made by your Daddy -: Denver1769 //
-        </script>
+
+        .plyr__video-wrapper::after {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 10;
+            content: '';
+            height: 35px;
+            width: 35px;
+            background: no-repeat;
+            background-size: 40px, auto, auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading" class="loading">
+        <div class="loading-text">
+            <span class="loading-text-words">RUBEL LIVE TV</span>
+        </div>
+    </div>
+    <video autoplay controls crossorigin playsinline>
+        <source type="application/vnd.apple.mpegurl" src="https://retosprime.com/crichd/toffe/toffe.m3u8">
+    </video>
 </body>
-        </html>
+<script>
+    setTimeout(videovisible, 3000);
+
+    function videovisible() {
+        document.getElementById('loading').style.display = 'none';
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const video = document.querySelector("video");
+        const sources = [
+            "https://retosprime.com/crichd/toffe/toffe.m3u8",
+            "https://hls.psz.pm/hls/sportitalia/index.m3u8"
+        ];
+        
+        function loadVideo(src) {
+            if (Hls.isSupported()) {
+                var config = {
+                    maxMaxBufferLength: 100,
+                };
+                const hls = new Hls(config);
+                hls.loadSource(src);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                    const qualities = hls.levels.map(level => level.height);
+                    const options = {
+                        quality: {
+                            default: qualities[0],
+                            options: qualities,
+                            forced: true,
+                            onChange: quality => {
+                                hls.levels.forEach((level, index) => {
+                                    if (level.height === quality) {
+                                        hls.currentLevel = index;
+                                    }
+                                });
+                            }
+                        }
+                    };
+                    new Plyr(video, options);
+                });
+                window.hls = hls;
+            } else {
+                new Plyr(video, {});
+            }
+        }
+        
+        // Load the first video source initially
+        loadVideo(sources[0]);
+        
+        // Example of switching video source after some time
+        setTimeout(() => {
+            loadVideo(sources[1]);
+        }, 60000); // Switch to the second source after 60 seconds
+    });
+</script>
+</body>
+</html>
