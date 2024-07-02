@@ -16,7 +16,7 @@
     <style>
         html {
             font-family: Poppins;
-            background: #000 ;
+            background: #000;
             margin: 0;
             padding: 0;
         }
@@ -90,11 +90,12 @@
             filter: blur(0px);
             animation: blur-text 1.5s 1.4s infinite linear alternate;
         }
-        
+
         .loading-text span:nth-child(9) {
             filter: blur(0px);
             animation: blur-text 1.5s 1.6s infinite linear alternate;
         }
+
         @keyframes blur-text {
             0% {
                 filter: blur(0px);
@@ -137,7 +138,7 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         const video = document.querySelector("video");
-        const src = "https://a2uy.short.gy/ROM-V-NED-Multi/Join-@HimelOP_Official/Zubayer_Op.m3u8";
+        const src = video.querySelector("source").src;
 
         if (Hls.isSupported()) {
             var config = {
@@ -170,5 +171,4 @@
         }
     });
 </script>
-</body>
 </html>
