@@ -125,7 +125,7 @@
         </div>
     </div>
     <video autoplay controls crossorigin playsinline>
-        <source type="application/vnd.apple.mpegurl" src="https://retosprime.com/crichd/toffe/toffe.m3u8">
+        <source type="application/vnd.apple.mpegurl" src="https://hls.psz.pm/hls/sportitalia/index.m3u8">
     </video>
 </body>
 <script>
@@ -137,50 +137,37 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         const video = document.querySelector("video");
-        const sources = [
-            "https://retosprime.com/crichd/toffe/toffe.m3u8",
-            "https://hls.psz.pm/hls/sportitalia/index.m3u8"
-        ];
-        
-        function loadVideo(src) {
-            if (Hls.isSupported()) {
-                var config = {
-                    maxMaxBufferLength: 100,
-                };
-                const hls = new Hls(config);
-                hls.loadSource(src);
-                hls.attachMedia(video);
-                hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                    const qualities = hls.levels.map(level => level.height);
-                    const options = {
-                        quality: {
-                            default: qualities[0],
-                            options: qualities,
-                            forced: true,
-                            onChange: quality => {
-                                hls.levels.forEach((level, index) => {
-                                    if (level.height === quality) {
-                                        hls.currentLevel = index;
-                                    }
-                                });
-                            }
+        const src = "https://hls.psz.pm/hls/sportitalia/index.m3u8";
+
+        if (Hls.isSupported()) {
+            var config = {
+                maxMaxBufferLength: 100,
+            };
+            const hls = new Hls(config);
+            hls.loadSource(src);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                const qualities = hls.levels.map(level => level.height);
+                const options = {
+                    quality: {
+                        default: qualities[0],
+                        options: qualities,
+                        forced: true,
+                        onChange: quality => {
+                            hls.levels.forEach((level, index) => {
+                                if (level.height === quality) {
+                                    hls.currentLevel = index;
+                                }
+                            });
                         }
-                    };
-                    new Plyr(video, options);
-                });
-                window.hls = hls;
-            } else {
-                new Plyr(video, {});
-            }
+                    }
+                };
+                new Plyr(video, options);
+            });
+            window.hls = hls;
+        } else {
+            new Plyr(video, {});
         }
-        
-        // Load the first video source initially
-        loadVideo(sources[0]);
-        
-        // Example of switching video source after some time
-        setTimeout(() => {
-            loadVideo(sources[1]);
-        }, 60000); // Switch to the second source after 60 seconds
     });
 </script>
 </body>
