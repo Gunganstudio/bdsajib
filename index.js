@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
 
-const token = '6353089444:AAEVilC1LArlNWhwKthXEjvnep8-auG63H4'; // Replace with your Telegram bot token
+const token = process.env.TELEGRAM_BOT_TOKEN; // Use the token from environment variables
 const bot = new TelegramBot(token, { polling: true });
 
 const userAgents = [
