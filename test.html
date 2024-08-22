@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Stream Player</title>
+    <meta content="noindex, nofollow, noarchive" name="robots"/>
+    <meta name="referrer" content="no-referrer" />
+    <script src='https://ssl.p.jwpcdn.com/player/v/8.33.2/jwplayer.js'></script>
+    <script>jwplayer.key = "Khpp2dHxlBJHC8MCmLnBuV2jK/DwDnJMniwF6EO9HC/riJ712ZmbHg==";</script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+        .video-container {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            width: 100%;
+            max-width: 800px; /* Adjust the width according to the desired size */
+            margin: 0 auto; /* Center the video */
+        }
+        .jwplayer {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <div id="player"></div>
+    </div>
+
+    <script>
+        jwplayer("player").setup({
+            file: "https://vipgoodlive-tvs.creativehub.sbs/Sky_Sports_Cricket_Live_TV/index.m3u8",
+            autostart: true,
+            width: "100%",
+            height: "100%",
+            stretching: "exactfit",
+            aspectratio: "16:9",
+            controls: true,
+            fullscreen: true,
+            advertising: {}, // Disable advertising, if present
+            preload: "auto", // Preload video to enhance playback speed
+        });
+
+        jwplayer().on('ready', function() {
+            console.log('Player is ready.');
+        });
+
+        jwplayer().on('play', function() {
+            console.log('Playback started.');
+        });
+
+        jwplayer().on('error', function(error) {
+            console.error('Error playing the video:', error.message);
+        });
+
+        jwplayer().on('setupError', function(error) {
+            console.error('Setup error:', error.message);
+        });
+    </script>
+</body>
+</html>
