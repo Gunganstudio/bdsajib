@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+.wrapper {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid #007bff; /* Border for the container */
+  margin-top: 20px;
+}
+/* Slower scroll text style */
+.scrolling-text-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+.scrolling-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-text 10s linear infinite;  /* Fixed animation name */
+  font-size: 18px;
+  color: #007bff;
+}
+@keyframes scroll-text {  /* Fixed animation name */
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.iframe-container {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+iframe:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+}
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.buttons-container button {
+  padding: 12px 25px;
+  font-size: 16px;
+  color: #fff;
+  background: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.buttons-container button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+.buttons-container button.active {
+  background: #28a745;
+}
+.currently-playing {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+/* Footer with Telegram Join Link */
+.footer {
+  margin-top: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
